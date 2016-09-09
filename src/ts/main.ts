@@ -1,8 +1,12 @@
 class BitcoinMiner {
     public hash;
+    public generatedHashes = 0;
+    public exploredBitcoins = 0;
+
     public $hashesBelt = document.querySelector('[data-hashes]');
     public $generatedHashesCounter = document.querySelector('[data-generated-hashes]');
-    public generatedHashes = 0;
+    public $generatedBitcoinsCounter = document.querySelector('[data-generated-bitcoins]');
+    public $generatedUSDCounter = document.querySelector('[data-generated-USD]');
 
     constructor() {
         this.hash = Math.random().toString();
@@ -143,12 +147,23 @@ class BitcoinMiner {
             clearTimeout(a);
             var a = setTimeout(function() {
                 self.explore();
-            }, 10);
+            }, 1);
         }
     }
 
+    countExploredBitcoins() {
+        //About 40 TeraHash will make 1 BTC - http://bitcoin.sipa.be/
+        let oneHashValue = 0.000000000000025; //in BTC
+        this.exploredBitcoins = this.generatedHashes * oneHashValue;
+        return this.exploredBitcoins;
+    }
+
     updateView() {
-        this.$generatedHashesCounter.innerHTML = this.generatedHashes;
+        let generatedBitcoins = this.countExploredBitcoins().toFixed(12);
+        this.$generatedHashesCounter.innerHTML = this.generatedHashes.toString();
+        this.$generatedBitcoinsCounter.innerHTML = generatedBitcoins + ' ฿';
+        this.$generatedUSDCounter.innerHTML = (generatedBitcoins * 622.62).toFixed(9) + ' $'; // BTC price 9.09.2016
+        
         this.$hashesBelt.innerHTML += '<span>' + this.hash + '</span>';
         let firstHash = this.$hashesBelt.getElementsByTagName('span')[0];
         firstHash.parentNode.removeChild(firstHash);
