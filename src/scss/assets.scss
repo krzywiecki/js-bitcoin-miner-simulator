@@ -1,0 +1,13 @@
+$blue: #4285F4;
+$red: #EA4335;
+$yellow: #FCDA77;
+$green: #34A853;
+$gray: #1A1B20;
+
+@mixin transition($duration) {
+    -webkit-transition: all $duration ease;
+    -moz-transition: all $duration ease;
+    -ms-transition: all $duration ease;
+    -o-transition: all $duration ease;
+    transition: all $duration ease;
+}

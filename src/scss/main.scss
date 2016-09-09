@@ -1,0 +1,53 @@
+@import 'assets';
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:300,400';
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+}
+
+.hash-belt-wrapper{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    margin-top: -26px;
+    text-align: center;
+}
+
+.hash-belt{
+    font-size: 23px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    background: $gray;
+    max-width: 1100px;
+    width: 90%;
+    height: 60px;
+    color: #ffffff;
+    display: block;
+    margin: auto;
+
+    span{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 13px;
+        opacity: 0;
+        @include transition(0.3s);
+
+        &:nth-child(1) {
+            opacity: 1;
+        }
+    }
+}
+
+.background-part {
+    float:left;
+    width: 100%;
+    height: 50vh;
+}
+
+.background-part-2 {
+    background: url('../img/bg-1.jpg') center center no-repeat;
+    background-size: cover;
+} 
