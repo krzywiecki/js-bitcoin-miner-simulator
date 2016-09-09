@@ -1,0 +1,32 @@
+{
+  "name": "js-bitcoin-miner-simulator",
+  "version": "1.0.0",
+  "description": "Bitcoin miner simulator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/krzywiecki/js-bitcoin-miner-simulator.git"
+  },
+  "keywords": [
+    "bitcoins",
+    "miner",
+    "javascript"
+  ],
+  "author": "Dominik Krzywiecki dominik@krzywiecki.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krzywiecki/js-bitcoin-miner-simulator/issues"
+  },
+  "homepage": "https://github.com/krzywiecki/js-bitcoin-miner-simulator#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-typescript": "^2.13.6",
+    "mocha": "^3.0.2"
+  }
+}
